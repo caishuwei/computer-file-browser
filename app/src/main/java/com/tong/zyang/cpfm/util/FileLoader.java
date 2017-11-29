@@ -218,7 +218,7 @@ public class FileLoader {
             httpURLConnection.setReadTimeout(READ_TIME_OUT);
             httpURLConnection.setRequestMethod(METHOD_GET);
             httpURLConnection.connect();
-
+            Log.e("获取子文件列表",httpURLConnection.getResponseCode() +"");
             if (httpURLConnection.getResponseCode() / 100 == 2) {
                 bufferedInputStream = new BufferedInputStream(httpURLConnection.getInputStream());
                 byte[] bytes = new byte[10240];
